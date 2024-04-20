@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fvalenciaS2.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="Calificaciones U. Israel"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Picker x:Name="PEstudiantes" Title="Selecciona un estudiante">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alejandra Lopez</x:String>
+                        <x:String>Luis Torres</x:String>
+                        <x:String>Fernando Valencia</x:String>
+                        <x:String>Anabel Cruz</x:String>
+                        <x:String>Cristina Fernandez</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <StackLayout>
+                <Entry x:Name="TxtNotaSeguimiento1"  Placeholder="Nota seguimiento 1"  Keyboard ="Numeric" TextChanged ="OnEntryTextChanged" />
+                <Entry x:Name="TxtExamen1"  Placeholder="Examen 1" Keyboard ="Numeric" TextChanged ="OnEntryTextChanged" />
+                <Entry x:Name="TxtNotaSeguimiento2 "  Placeholder="Nota seguimiento 2" Keyboard ="Numeric" TextChanged ="OnEntryTextChanged" />
+                <Entry x:Name="TxtExamen2"  Placeholder="Examen 2" Keyboard ="Numeric" TextChanged ="OnEntryTextChanged" />
+                <DatePicker x:Name="dpFecha"  Date="01/01/2023"  Format="MM/dd/yyyy"/>
+            </StackLayout>
+
+            <Button
+                x:Name="CalcularBtn"
+                Text="Calcular"  
+                Clicked="CalcularBtn_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="LimpiarBtn"
+                Text="Limpiar"  
+                Clicked="LimpiarCajasDeTexto"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
